@@ -13,8 +13,11 @@ namespace Curs_02
             Engine.initGraph(pictureBox1);
             Engine.demo = new Graf();
             Engine.demo.LoadFromFile(@"../../../WindowsFormAplication4.txt");
+            Engine.demo.Color();
+            List<string> t = Engine.demo.View(listBox2);
             Engine.demo.Draw(Engine.grp);
             Engine.Refresh();
+
         }
     }
 }

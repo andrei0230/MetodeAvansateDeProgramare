@@ -14,6 +14,7 @@ namespace Curs_02
         public static PictureBox display;
         public static Color color = Color.BlanchedAlmond;
         public static Graf demo;
+        public static Color[] Pall = new Color[] {Color.Red, Color.Blue, Color.Yellow, Color.Orange, Color.Orchid};
 
         public static void initGraph(PictureBox t)
         {
