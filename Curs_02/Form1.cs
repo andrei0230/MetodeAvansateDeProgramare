@@ -32,5 +32,16 @@ namespace Curs_02
             }
             listBox1.Items.Add(x);
         }
+
+        private void btnDFS_Click(object sender, EventArgs e)
+        {
+            string x = "";
+            List<int> t = Engine.demo.DFS(3);
+            foreach (int i in t)
+            {
+                x += i + " ";
+            }
+            listBox1.Items.Add(x);
+        }
     }
 }

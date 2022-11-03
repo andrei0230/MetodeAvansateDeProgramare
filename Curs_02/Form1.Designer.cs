@@ -32,6 +32,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.btnBFS = new System.Windows.Forms.Button();
+            this.btnDFS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,19 +66,30 @@
             // 
             // btnBFS
             // 
-            this.btnBFS.Location = new System.Drawing.Point(1205, 291);
+            this.btnBFS.Location = new System.Drawing.Point(1197, 277);
             this.btnBFS.Name = "btnBFS";
-            this.btnBFS.Size = new System.Drawing.Size(94, 29);
+            this.btnBFS.Size = new System.Drawing.Size(102, 43);
             this.btnBFS.TabIndex = 3;
             this.btnBFS.Text = "BFS";
             this.btnBFS.UseVisualStyleBackColor = true;
             this.btnBFS.Click += new System.EventHandler(this.btnBFS_Click);
+            // 
+            // btnDFS
+            // 
+            this.btnDFS.Location = new System.Drawing.Point(1317, 277);
+            this.btnDFS.Name = "btnDFS";
+            this.btnDFS.Size = new System.Drawing.Size(102, 43);
+            this.btnDFS.TabIndex = 4;
+            this.btnDFS.Text = "DFS";
+            this.btnDFS.UseVisualStyleBackColor = true;
+            this.btnDFS.Click += new System.EventHandler(this.btnDFS_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 685);
+            this.Controls.Add(this.btnDFS);
             this.Controls.Add(this.btnBFS);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -96,5 +108,6 @@
         private ListBox listBox1;
         private ListBox listBox2;
         private Button btnBFS;
+        private Button btnDFS;
     }
 }

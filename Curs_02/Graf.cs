@@ -12,7 +12,8 @@ namespace Curs_02
         public List<Vertex> Vertices;
         public List<Edge> Edges;
         public int[,] Matrix;
-        
+
+        private List<int> ToR;
 
         public Graf()
         {
@@ -131,7 +132,6 @@ namespace Curs_02
             }
         }
 
-
         public List<int> BFS(int ns)
         {
             List<int> tor = new List<int>();
@@ -157,6 +157,29 @@ namespace Curs_02
             }
 
             return tor;
+        }
+
+        public List<int> DFS(int ns)
+        {
+            bool[] v = new bool[Vertices.Count];
+            v[ns] = true;
+            ToR = new List<int>();
+            DFSUtils(ns, v);
+            return ToR;
+        }
+
+        public void DFSUtils(int ns, bool[] v)
+        {
+            ToR.Add(ns);
+            for(int i = 0; i < Vertices.Count; i++)
+            {
+                if (Matrix[ns, i] != 0 && !v[i])
+                {
+                    v[i] = true;
+                    DFSUtils(i, v);
+                }
+                    
+            }
         }
     }
 }
