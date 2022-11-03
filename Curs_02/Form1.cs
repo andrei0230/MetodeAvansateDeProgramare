@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace Curs_02
 {
     public partial class Form1 : Form
@@ -18,6 +20,17 @@ namespace Curs_02
             Engine.demo.Draw(Engine.grp);
             Engine.Refresh();
 
+        }
+
+        private void btnBFS_Click(object sender, EventArgs e)
+        {
+            string x = "";
+            List<int> t = Engine.demo.BFS(3);
+            foreach(int i in t)
+            {
+                x += i + " ";   
+            }
+            listBox1.Items.Add(x);
         }
     }
 }

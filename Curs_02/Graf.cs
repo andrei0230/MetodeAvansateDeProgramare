@@ -129,9 +129,34 @@ namespace Curs_02
             {
                 Vertices[i].color = colors[i];
             }
+        }
 
 
+        public List<int> BFS(int ns)
+        {
+            List<int> tor = new List<int>();
+            Queue<int> A = new Queue<int>();
+            bool[] v = new bool[Vertices.Count];
+            v[ns] = false;
             
+            A.Enqueue(ns);
+
+            while(A.Count != 0)
+            {
+                int x = A.Dequeue();
+                tor.Add(x);
+                v[x] = true;
+                for(int i = 0; i < Vertices.Count; i++)
+                {
+                    if (Matrix[x,i] != 0 && !v[i])
+                    {
+                        v[i] = true;
+                        A.Enqueue(i);
+                    }
+                }
+            }
+
+            return tor;
         }
     }
 }
