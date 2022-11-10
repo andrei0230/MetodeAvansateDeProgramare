@@ -46,7 +46,6 @@ namespace Curs_02
 
         private void btnDIJKSTRA_Click(object sender, EventArgs e)
         {
-            string x = "";
             int ns = 1;
             float[] t = Engine.demo.DIJKSTRA(ns);
 
