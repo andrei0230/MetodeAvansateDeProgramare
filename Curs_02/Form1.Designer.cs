@@ -34,6 +34,7 @@
             this.btnBFS = new System.Windows.Forms.Button();
             this.btnDFS = new System.Windows.Forms.Button();
             this.btnDIJKSTRA = new System.Windows.Forms.Button();
+            this.btnHamilton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,22 @@
             this.btnDIJKSTRA.UseVisualStyleBackColor = true;
             this.btnDIJKSTRA.Click += new System.EventHandler(this.btnDIJKSTRA_Click);
             // 
+            // btnHamilton
+            // 
+            this.btnHamilton.Location = new System.Drawing.Point(1205, 346);
+            this.btnHamilton.Name = "btnHamilton";
+            this.btnHamilton.Size = new System.Drawing.Size(94, 29);
+            this.btnHamilton.TabIndex = 6;
+            this.btnHamilton.Text = "Hamilton";
+            this.btnHamilton.UseVisualStyleBackColor = true;
+            this.btnHamilton.Click += new System.EventHandler(this.btnHamilton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 685);
+            this.Controls.Add(this.btnHamilton);
             this.Controls.Add(this.btnDIJKSTRA);
             this.Controls.Add(this.btnDFS);
             this.Controls.Add(this.btnBFS);
@@ -122,5 +134,6 @@
         private Button btnBFS;
         private Button btnDFS;
         private Button btnDIJKSTRA;
+        private Button btnHamilton;
     }
 }

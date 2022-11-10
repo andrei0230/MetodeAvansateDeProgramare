@@ -55,5 +55,18 @@ namespace Curs_02
             }
 
         }
+
+        private void btnHamilton_Click(object sender, EventArgs e)
+        {
+            int ns = 1;
+            int[] t = Engine.demo.Hamilton(ns);
+            string s = "";
+
+            for(int i = 0; i < Engine.demo.Vertices.Count; i++)
+            {
+                s += t[i] + " ";
+            }
+            listBox1.Items.Add(s);
+        }
     }
 }

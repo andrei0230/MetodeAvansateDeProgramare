@@ -13,7 +13,7 @@ namespace Curs_02
         public List<Edge> Edges;
         public int[,] Matrix;
         public static float inf = 1e10f;
-
+        
         private List<int> ToR;
 
         public Graf()
@@ -214,6 +214,49 @@ namespace Curs_02
             }
 
             return D;
+        }
+        
+        public int[] v;
+
+        public int[] Hamilton(int ns)
+        {
+  
+            v = new int[Vertices.Count];
+            int[] s = new int[Vertices.Count];
+            bool[] b = new bool[Vertices.Count];
+            bk(0, Vertices.Count, s, b);
+            return v;
+        }
+
+        public void bk(int k, int n, int[] s, bool[] b)
+        {
+            if(k>=n)
+            {
+                bool ok = true;
+                for(int i = 0; i < n-1; i++)
+                {
+                    if (Matrix[s[i], s[i+1]] == 0)
+                        ok = false;
+                }
+                if(ok)
+                {
+                    for(int i = 0; i < n; i++)
+                    {
+                        v[i] = s[i];
+                    }
+                }
+            }
+
+            for(int i = 0; i < n; i++)
+            {
+                if(!b[i])
+                {
+                    b[i] = true;
+                    s[k] = i;
+                    bk(k+1,n,s,b);
+                    b[i] = false;
+                }
+            }
         }
     }
 }
