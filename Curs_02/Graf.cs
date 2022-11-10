@@ -12,6 +12,7 @@ namespace Curs_02
         public List<Vertex> Vertices;
         public List<Edge> Edges;
         public int[,] Matrix;
+        public static float inf = 1e10f;
 
         private List<int> ToR;
 
@@ -48,8 +49,8 @@ namespace Curs_02
 
             foreach(Edge edge in Edges)
             {
-                Matrix[edge.Start.Idx, edge.End.Idx] = 1;
-                Matrix[edge.End.Idx, edge.Start.Idx] = 1;
+                Matrix[edge.Start.Idx, edge.End.Idx] = (int)edge.Cost;
+                Matrix[edge.End.Idx, edge.Start.Idx] = (int)edge.Cost;
             }
         }
 
@@ -180,6 +181,39 @@ namespace Curs_02
                 }
                     
             }
+        }
+
+        public float[] DIJKSTRA(int ns)
+        {
+            float[] D = new float[Vertices.Count];
+
+            for(int i = 0; i < Vertices.Count; i++)
+            {
+                D[i] = inf;
+            }
+
+            Queue<int> A = new Queue<int>();
+
+            D[ns] = 0;
+            A.Enqueue(ns);
+
+            while(A.Count > 0)
+            {
+                int t = A.Dequeue();
+                for(int i = 0; i < Vertices.Count; i++ )
+                {
+                    if (Matrix[t,i] != 0)
+                    {
+                        if (D[t] + Matrix[t,i] < D[i])
+                        {
+                            D[i] = D[t] + Matrix[t,i];
+                            A.Enqueue(i);
+                        }
+                    }
+                }
+            }
+
+            return D;
         }
     }
 }

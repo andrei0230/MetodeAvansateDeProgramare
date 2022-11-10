@@ -43,5 +43,18 @@ namespace Curs_02
             }
             listBox1.Items.Add(x);
         }
+
+        private void btnDIJKSTRA_Click(object sender, EventArgs e)
+        {
+            string x = "";
+            int ns = 1;
+            float[] t = Engine.demo.DIJKSTRA(ns);
+
+            for(int i = 0; i < Engine.demo.Vertices.Count; i++)
+            {
+                listBox1.Items.Add(ns + "->" + i + " : " + t[i]);
+            }
+
+        }
     }
 }

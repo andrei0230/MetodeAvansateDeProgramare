@@ -33,6 +33,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.btnBFS = new System.Windows.Forms.Button();
             this.btnDFS = new System.Windows.Forms.Button();
+            this.btnDIJKSTRA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +85,22 @@
             this.btnDFS.UseVisualStyleBackColor = true;
             this.btnDFS.Click += new System.EventHandler(this.btnDFS_Click);
             // 
+            // btnDIJKSTRA
+            // 
+            this.btnDIJKSTRA.Location = new System.Drawing.Point(1456, 277);
+            this.btnDIJKSTRA.Name = "btnDIJKSTRA";
+            this.btnDIJKSTRA.Size = new System.Drawing.Size(96, 43);
+            this.btnDIJKSTRA.TabIndex = 5;
+            this.btnDIJKSTRA.Text = "DIJKSTRA";
+            this.btnDIJKSTRA.UseVisualStyleBackColor = true;
+            this.btnDIJKSTRA.Click += new System.EventHandler(this.btnDIJKSTRA_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 685);
+            this.Controls.Add(this.btnDIJKSTRA);
             this.Controls.Add(this.btnDFS);
             this.Controls.Add(this.btnBFS);
             this.Controls.Add(this.listBox2);
@@ -109,5 +121,6 @@
         private ListBox listBox2;
         private Button btnBFS;
         private Button btnDFS;
+        private Button btnDIJKSTRA;
     }
 }
